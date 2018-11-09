@@ -16,7 +16,7 @@ namespace Torens_van_Hanoi_Rebuild_Edition
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new TorensVanHanoi());
         }
     }
 }
