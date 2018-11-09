@@ -12,6 +12,18 @@ namespace Torens_van_Hanoi_Rebuild_Edition
 {
     public partial class TorensVanHanoi : Form
     {
+        Button GeselecteerdeDisk = null;
+        Point Coordinates;
+        const int AfstandVanTorens = 250;
+        const int AfstandTussenButtons = 35;
+        Point Stack1Coordinates = new Point(130, 50);
+        Point Stack2Coordinates = new Point(380, 50);
+        Point Stack3Coordinates = new Point(630, 50);
+        int[] TorenLocaties;
+        Button[] Buttons;
+        int ClickCount = 0;
+        int[] StackLocations = new int[8];
+
         public TorensVanHanoi()
         {
             InitializeComponent();
@@ -20,17 +32,7 @@ namespace Torens_van_Hanoi_Rebuild_Edition
             TorenLocaties = new int[] { Toren1.Location.X, Toren2.Location.X, Toren3.Location.X };
             StartingStack();
         }
-       
-        Button GeselecteerdeDisk = null;
-        Point Coordinates;
-        const int AfstandVanTorens = 250;
-        Point Stack1Coordinates = new Point(130, 50);
-        Point Stack2Coordinates = new Point(380, 50);
-        Point Stack3Coordinates = new Point(630, 50);
-        int[] TorenLocaties;
-        Button[] Buttons;
-        int ClickCount = 0;
-
+               
         void StartingStack()
         {
             for (int j = 0; j < Buttons.Length; j++)
@@ -85,7 +87,18 @@ namespace Torens_van_Hanoi_Rebuild_Edition
 
                     if (Coordinates.X > TorenLocaties[i] && Coordinates.X < TorenLocaties[i + 1])
                     {
+                        
                         Stacks[i].Push(GeselecteerdeDisk);
+
+                        for (int x = 0; x < Buttons.Length; ++x)
+                        {
+                            if (Convert.ToInt16(Buttons[x]) == Convert.ToInt16(GeselecteerdeDisk.Text))
+                            {
+                                GeselecteerdeDisk.Location = new Point(( + AfstandVanTorens));
+                                GeselecteerdeDisk.Location = new Point(y - x * AfstandTussenButtons);
+                            }
+                        }
+
                         ClickCount = 0;
                     }
 
