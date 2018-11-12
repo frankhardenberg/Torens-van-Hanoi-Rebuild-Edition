@@ -7,7 +7,7 @@
     <ProjectGuid>{E64373C9-E68B-4946-80A6-52C365CA2C05}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Torens_van_Hanoi_Rebuild_Edition</RootNamespace>
-    <AssemblyName>Torens van Hanoi Rebuild Edition</AssemblyName>
+    <AssemblyName>w</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

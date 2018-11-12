@@ -94,8 +94,9 @@ namespace Torens_van_Hanoi_Rebuild_Edition
                         {
                             if (Convert.ToInt16(Buttons[x]) == Convert.ToInt16(GeselecteerdeDisk.Text))
                             {
-                                GeselecteerdeDisk.Location = new Point(( + AfstandVanTorens));
-                                GeselecteerdeDisk.Location = new Point(y - x * AfstandTussenButtons);
+                                Width = GeselecteerdeDisk.Location.X + AfstandVanTorens * Convert.ToInt16(Stacks[i]);
+                                Height = GeselecteerdeDisk.Location.Y + AfstandTussenButtons * Convert.ToInt16(Buttons[x]);
+                                GeselecteerdeDisk.Location = new Point(Width, Height);
                             }
                         }
 
@@ -112,8 +113,7 @@ namespace Torens_van_Hanoi_Rebuild_Edition
         }
 
         private void Disk1_MouseUp(object sender, MouseEventArgs e) // Alle Disks
-        {
-            
+        {            
         }
     }
 }
